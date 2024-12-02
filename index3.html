@@ -4,6 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aquila</title>
+    <style>
+      .chart {
+            position: relative;
+            margin: 1rem;
+            width: 200px;
+            height: 200px;
+            border-radius: 70%;
+            background: conic-gradient(
+                red 0% 68%,
+                transparent 68% 70%,
+                orange 70% 90%,
+                transparent 90% 93%,
+                green 93% 98%,
+                transparent 98% 100%
+            );
+        }
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #4a4a4a;
+        }
+
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 10px;
+            margin-right: 8px;
+        }
+
+        .legend-high { background: red; }
+        .legend-medium { background: orange; }
+        .legend-low { background: green; }
+
+        .large-letter {
+            font-size: 100px;
+            font-weight: bold;
+            color: #D76E2B; /* Orange color for 'E' */
+            margin-bottom: 20px;
+        }
+
+        .blocks-container {
+            display: flex;
+            gap: 10px; /* Space between blocks */
+        }
+
+        .block {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 20px; /* Rounded corners for blocks */
+        }
+
+        .block-a { background-color: #2CB572; } /* Green */
+        .block-b { background-color: #5FA941; } /* Light Green */
+        .block-c { background-color: #D5C340; } /* Yellow */
+        .block-d { background-color: #D88E32; } /* Orange */
+        .block-e { background-color: #D76E2B; } /* Deep Orange */
+        .block-f { background-color: #D7352B; } /* Red */
+    </style>
   </head>
   <body style="margin: 2rem">
     <div
@@ -151,7 +240,6 @@
         </tr>
       </tbody>
     </table>
-    <div>
       <h3 style="color: red">Vulnerability</h3>
       <h1 style="color: #2e2d2d">Scan summary</h1>
       <table style="width: 100%; border: 2px solid #e5e7eb">
@@ -174,6 +262,35 @@
           </tr>
         </thead>
       </table>
-    </div>
+      <div style="display:flex; align-items:center; gap: 40px;border-left:2px solid #e5e7eb;border-right:2px solid #e5e7eb;border-bottom:2px solid #e5e7eb;;">
+        <div class="chart" style="margin-top: 2rem;">
+          <div class="chart-center" style="font-weight:bold; font-size:5rem ;">
+            57 <br>
+            <h3 class="chart-good" style="font-size: 14px;">Vulnerabilities</span>
+          </div>
+        </div>
+        <div class="legend" style="gap:3px">
+          <div class="legend-item">
+            <div class="legend-color legend-high"></div> High 40
+          </div>
+          <div class="legend-item">
+            <div class="legend-color legend-medium"></div> Medium 13
+          </div>
+          <div class="legend-item">
+            <div class="legend-color legend-low"></div> Low 4
+          </div>
+        </div>
+        <div style="display:flex;flex-direction: column;align-items: center; justify-content: center;margin-left: 28rem;">
+          <div class="large-letter">E</div>
+          <div class="blocks-container">
+            <div class="block block-a">A</div>
+            <div class="block block-b">B</div>
+            <div class="block block-c">C</div>
+            <div class="block block-d">D</div>
+            <div class="block block-e">E</div>
+            <div class="block block-f">F</div>
+          </div>
+        </div>
+      </div>
   </body>
 </html>
